@@ -5,7 +5,7 @@ const getGeoCodeURL = require("./utils/geocode.js");
 const getWeatherInformation = require("./utils/weatherData.js");
 
 const app = express();
-console.log('express', __dirname, __filename);
+const port = process.env.PORT || 3000;
 let publicDirectoryPath =  path.join(__dirname, "../public");
 let directoryPathForViews =  path.join(__dirname, "../templates/views");
 let directoryPathForPartials =  path.join(__dirname, "../templates/partials");
@@ -85,6 +85,6 @@ app.get('*', (req, res)=> {
 	});
 })
 
-app.listen(3000, ()=> {
+app.listen(port, ()=> {
 	console.log("Server running");
 })

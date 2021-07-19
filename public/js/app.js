@@ -22,7 +22,7 @@ console.log("weatherSelectionForm", weatherSelectionForm);
 weatherSelectionForm.addEventListener('submit', function(event) {
 	event.preventDefault();
 	let inputAdded = event.target.querySelector("input").value;
-	fetch('http://localhost:3000/weather?address=' + inputAdded).then((response)=> {
+	fetch('/weather?address=' + inputAdded).then((response)=> {
 		let errorData = document.querySelector("#errorMessage");
 		errorData.textContent = '';
 		let weatherData = document.querySelector("#weatherData");
